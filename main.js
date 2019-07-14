@@ -12,9 +12,15 @@ Ex:  hello(null) => null
 
 */
 
-function hello() {
-  // WRITE YOUR CODE UNDER THIS LINE  
+function hello(name) {
+  
+  if (name === '' || name === null) {
+    na = null;
+  } else {
+  na = 'Hello' + ' ' + name + ' !';
+}
 
+  return na;
 }
 
 
@@ -32,9 +38,14 @@ Ex: calculateTax(100,0.15)
 => "You got 100 JD from sales, you should pay 15 JD for tax and you will have 85 JD as net sales."
 */
 
-function calculateTax() {
-  // WRITE YOUR CODE UNDER THIS LINE 
+function calculateTax(taxNum, taxAmount) {
+  
+  var tax = taxAmount * taxNum ;
+  var change = taxNum - tax;
 
+  salesAmount = 'You got ' + taxNum + ' JD from sales, you should pay ' + tax + ' JD for tax and you will have ' + change + ' JD as net sales.' 
+
+  return salesAmount
 }
 
 
@@ -52,9 +63,29 @@ Ex: repeatChar("a",2); => "a, A"
 Ex: repeatChar("C",5); => "C, c, C, c, C"
 */
 
-function repeatChar() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function repeatChar(str, num) {
 
+  var char = str;
+
+  while (num > 0) {
+    
+    var n = '';
+
+    if (str === char.toLowerCase()) {
+      n = str.toUpperCase();
+    } else if (str === char.toUpperCase()) {
+      n = str.toLowerCase();
+    }
+
+    // n = char + n;
+    char = char + ', ' + n;
+
+    
+    --num;
+
+  }
+
+  return char;
 }
 
 
@@ -72,8 +103,14 @@ Ex: stringToCapital("Are you a student in coding ACADEMY by ORANGE ?")
 => "ARE YOU A STUDENT IN CODING ACADEMY BY ORANGE ?"
 */
 
-function stringToCapital() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function stringToCapital(str) {
+
+
+  if (str.length === 0) {
+    return '';
+  }
+
+  return str.slice(0, 1).toUpperCase() + stringToCapital(str.slice(str.length -1));
 
 }
 
